@@ -80,7 +80,7 @@ export const MainScreen = () => {
           stiffness: 400,
         });
         setTimeout(() => {
-          opacity.value = withTiming(0, { duration: 100, easing: Easing.ease });
+          opacity.value = withTiming(0, { duration: 50, easing: Easing.ease });
         }, 0);
       }
     }
@@ -125,6 +125,7 @@ export const MainScreen = () => {
             setState({ ...state, expand: false });
           }
         }}
+        pointerEvents="auto"
       >
         <Animated.View
           style={[
@@ -147,6 +148,7 @@ export const MainScreen = () => {
               setState({ ...state, expand: true, touched: false });
             }
           }}
+          pointerEvents="auto"
         >
           <Animated.View style={[style.islandContent, animatedOpacity]}>
             <Text style={{ color: "yellow" }}>Test Hello</Text>
@@ -168,6 +170,9 @@ export const MainScreen = () => {
                   name="caretright"
                   // style={{ backgroundColor: "yellow" }}
                   color={"white"}
+                  onPress={() => {
+                    alert("HEY");
+                  }}
                 />
                 <AntDesign
                   allowFontScaling={false}
